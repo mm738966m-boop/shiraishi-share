@@ -78,6 +78,25 @@ li{margin-bottom:6px}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:17px;color:var(--ink2);margin-top:6px}
 .legend i{display:inline-block;width:26px;height:5px;border-radius:3px;vertical-align:middle;margin-right:6px}
 .foot{margin:70px 0 40px;padding-top:18px;border-top:1px solid var(--line);font-size:16px;color:var(--ink2);line-height:1.8}
+.bm{display:grid;gap:12px;margin:14px 0 6px}
+.bm .row{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 14px}
+.bm .row h4{margin:0 0 8px;font-size:19px;color:var(--deep)}
+.bm .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bm .side{border-radius:12px;padding:8px 10px;font-size:16.5px;line-height:1.6;min-width:0}
+.bm .side .lb{display:block;font-size:15px;font-weight:700;color:var(--ink2)}
+.bm .side.gap{background:var(--rosebg)}
+.bm .side.ok{background:var(--soft)}
+.bm .side.new{background:var(--soft);border:2px solid var(--teal)}
+.bm .side .mk{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;font-weight:900;font-size:16px;margin-right:6px;vertical-align:middle;background:var(--card);color:var(--deep)}
+.bm .side.gap .mk{color:var(--rose)}
+.big{font-size:clamp(24px,4vw,32px);font-weight:900;color:var(--teal)}
+.kotoba{background:var(--goldbg);border-radius:14px;padding:10px 14px;font-size:16.5px;margin:10px 0 14px}
+.kotoba b{color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:12px 0}
+.cards .box h3{font-size:20px;margin-bottom:6px}
+.chk2{display:flex;gap:10px;align-items:center;font-size:17px;font-weight:700;color:var(--deep);margin-top:6px}
+.chk2 input{width:24px;height:24px}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
 br.m{display:none}
 @media (max-width:760px){
  .hero .in{grid-template-columns:1fr}.hero img{width:120px}
@@ -93,7 +112,7 @@ br.m{display:none}
 
 <header class="hero"><div class="wrap in">
  <div>
-  <span class="tag">もえさま 本人用・2026年10月18日・Version 3</span>
+  <span class="tag">もえさま 本人用・2026年10月18日・Version 4</span>
   <h1>がんの備えを広げながら、<br>家族を守るお金を<br class="m">育てていく形に</h1>
   <p style="margin-top:12px">もえさんが送ってくださった2本の証券を、1枚の地図にしました。<br>そのうえで、東京海上日動あんしん生命の設計書（2026年10月18日作成）をもとに、組み直した形を並べています。<br>数字は動かせるので、一緒に触りながら見ていきましょう。</p>
  </div>
@@ -101,7 +120,7 @@ br.m{display:none}
 </div></header>
 
 <main class="wrap">
-<div class="toc"><a href="#mezasu">目指したい姿</a><a href="#ima">いまの2本</a><a href="#chizu">保障の地図</a><a href="#kaidan">保険料はいつ軽くなるか</a><a href="#minaoshi">見直すとこうなります</a><a href="#hikaku">このまま vs 組み直し</a><a href="#tashikame">確かめておくこと</a><a href="#tsugi">このあと</a></div>
+<div class="toc"><a href="#mezasu">目指したい姿</a><a href="#ima">いまの2本</a><a href="#chizu">保障の地図</a><a href="#kaidan">保険料はいつ軽くなるか</a><a href="#minaoshi">見直すとこうなります</a><a href="#neuchi">お金の値打ちの話</a><a href="#hikaku">貯金と比べると</a><a href="#tashikame">確かめておくこと</a><a href="#tsugi">このあと</a></div>
 <div class="caution">このページの数字は、証券の読み取りと設計書、そして一定の前提に基づく「試算」です。<br>将来の受け取り額をお約束するものではありません。</div>
 
 <h2 id="mezasu">目指したい姿</h2>
@@ -140,9 +159,15 @@ br.m{display:none}
 <p class="note">2032年3月以降は、がん保険2,450円と先進医療の特約（更新後の保険料・100円台の見込み）だけになります。<br>メットライフの入院日額1万円と手術20万円は、払い終わったあとも一生涯続きます。</p>
 
 <h2 id="minaoshi">見直すと、こうなります</h2>
-<div class="with"><img src="img/mascot_point.webp" alt=""><div>いまの2本を、医療・がん・3大疾病をまとめた1本と、家族を守りながらお金を育てる1本に組み直す形です。<br>ご家系のこともあってがんへの備えは大事にしたいとうかがったので、診断・抗がん剤の備えはそのままに、心臓・脳の病気まで広げています。</div></div>
+<div class="with"><img src="img/mascot_point.webp" alt=""><div>いまの2本を、医療・がん・3大疾病をまとめた1本と、家族を守りながらお金を育てる1本に組み直す形です。<br>ご家系のこともあってがんへの備えは大事にしたいとうかがったので、がんの備えはそのままに、心臓・脳の病気まで広げています。</div></div>
 
-<h3>1本目：入院・がん・3大疾病の備え</h3>
+<h3>空いていたマスが、4つから1つに</h3>
+<p>いまの保障の地図と、見直したあとの地図を並べました。<br>赤いマスが、備えのない「空白」です。</p>
+<div class="bm"><div class="row"><h4>入院したとき</h4><div class="pair"><div class="side ok"><span class="lb">いま</span><span class="mk">○</span>日額1万円。一時金なし</div><div class="side new"><span class="lb">見直し後</span><span class="mk">○</span>日額5,000円＋入院したら5万円</div></div></div><div class="row"><h4>がんと言われたとき</h4><div class="pair"><div class="side ok"><span class="lb">いま</span><span class="mk">○</span>診断100万円・治療の月10万円</div><div class="side new"><span class="lb">見直し後</span><span class="mk">○</span>治療で100万円・抗がん剤の月10万円・自由診療も1億円まで</div></div></div><div class="row"><h4>心臓・脳の病気のとき</h4><div class="pair"><div class="side gap"><span class="lb">いま</span><span class="mk">0</span>保険料の免除だけ</div><div class="side new"><span class="lb">見直し後</span><span class="mk">○</span>治療で100万円・入院は日数無制限</div></div></div><div class="row"><h4>万一のとき</h4><div class="pair"><div class="side gap"><span class="lb">いま</span><span class="mk">0</span>0円</div><div class="side new"><span class="lb">見直し後</span><span class="mk">○</span>ご家族へ600万円（80歳まで）</div></div></div><div class="row"><h4>老後のお金</h4><div class="pair"><div class="side gap"><span class="lb">いま</span><span class="mk">0</span>保険の中には貯まらない</div><div class="side new"><span class="lb">見直し後</span><span class="mk">○</span>毎月積み立て、80歳で受け取り</div></div></div><div class="row"><h4>働けなくなったとき</h4><div class="pair"><div class="side gap"><span class="lb">いま</span><span class="mk">0</span>なし</div><div class="side gap"><span class="lb">見直し後</span><span class="mk">0</span>今回は入れていません（下の注記）</div></div></div></div>
+<p class="note">働けなくなったときの保険は、これまでの健康状態から引き受けの目安に合わない見込みのため、今回は入れていません。<br>お勤め先の健康保険に入っている間は、病気やけがで休んだときに、お給料のおよそ3分の2が通算1年6か月まで出ます（傷病手当金）。</p>
+
+<h3 style="margin-top:26px">1本目：入院・がん・3大疾病の備え</h3>
+<p class="big" style="margin-bottom:6px">毎月 1,223円 下がって、<br class="m">備えは広がります</p>
 <p>毎月 <b>12,795円</b>。いまの2本の合計（14,018円）より、月1,223円軽くなります。</p>
 <div class="tbl"><table>
 <tr><th>中身</th><th>受け取れるとき</th><th class="num">金額</th><th class="num">月の保険料</th><th>払う期間</th></tr>
@@ -157,22 +182,15 @@ br.m{display:none}
 </table></div>
 <p class="note">がん・心臓・脳の病気で所定の状態になったら、それ以降の保険料は払わなくてよくなります。<br>保障は一生涯続き、65歳で本体と一時金・3大疾病・治療の部分（月10,283円）の払い込みが終わります。<br>抗がん剤・がんの自由診療・先進医療の3つは5〜10年ごとの更新で、更新のたびにその年齢の保険料になります（90歳まで）。</p>
 
-<h3>2本目：家族を守りながら、お金を育てる</h3>
-<p>毎月 <b>9,510円</b>。もしものときにご家族へ <b>600万円</b>（80歳まで）。<br>同時に、払ったお金の一部が世界の株などで運用され、80歳でまとめて受け取れます。</p>
-<p>いまは貯金を少しずつ増やしていく時期なので、月1万円を超えない、続けやすい金額にしています。</p>
-<div class="tbl"><table>
-<tr><th>いま解約したら戻る額（約）</th><th class="num">払った合計</th><th class="num">運用 0%</th><th class="num">運用 2.75%</th><th class="num">運用 5.5%</th></tr>
-<tr><td>10年後（48歳）</td><td class="num">114万円</td><td class="num">81万円</td><td class="num">93万円</td><td class="num">107万円</td></tr>
-<tr><td>20年後（58歳）</td><td class="num">228万円</td><td class="num">157万円</td><td class="num">210万円</td><td class="num">286万円</td></tr>
-<tr><td>27年後（65歳）</td><td class="num">308万円</td><td class="num">208万円</td><td class="num">312万円</td><td class="num">489万円</td></tr>
-<tr class="sum"><td>80歳（満期）</td><td class="num">479万円</td><td class="num">316万円</td><td class="num">600万円</td><td class="num">1,280万円</td></tr>
-</table></div>
-<p class="note">設計書の例示です（利回りは費用を引いたあとの年の値）。<br>65歳の行は、設計書の25年目と30年目の間を按分した目安です。<br>運用が振るわないと払った合計を下回ります。最低保証はありません。</p>
 
-<div class="two">
- <div class="box"><h3>いまの保障</h3><ul><li>入院：日額1万円（60日型）。一時金なし</li><li>がん：診断100万円＋治療の月10万円</li><li>心臓・脳：保険料の免除だけ</li><li>がんの自由診療：なし</li><li>万一：0円（2032年から30万円）</li><li>老後：保険の中には貯まらない</li></ul></div>
- <div class="box new"><h3>見直し後の保障</h3><ul><li>入院：日額5,000円＋一時金5万円。3大疾病は日数無制限</li><li>がん・心臓・脳：治療で1回100万円＋抗がん剤の月10万円</li><li>がんの自由診療：通算1億円まで</li><li>3大疾病で以後の保険料は免除</li><li>万一：600万円（80歳まで）</li><li>老後：80歳で積立金を受け取り</li></ul></div>
+<h3>2本目：家族を守りながら、お金を育てる</h3>
+<p>毎月 <b>9,510円</b>。もしものときにご家族へ <b>600万円</b>（80歳まで）。<br>同時に、払ったお金の一部が運用にまわり、80歳でまとめて受け取れます。</p>
+<div class="kotoba"><b>ことば：運用</b>　お金を銀行に置いておくだけでなく、世界の会社の株などに少しずつ預けて、会社の成長と一緒にお金を増やしていくことです。<br>どこで育てるかは、世界の株・日本の株・債券などの中から選べます。</div>
+<div class="cards">
+ <div class="box"><h3>先取り貯金になる</h3><p>保険料はお給料日のあとに口座から自動で引き落とされます。<br>使う前に先に分けておくので、「入ったら使ってしまう」心配がありません。<br>残ったお金でやりくりするだけで、積み立てが続きます。</p></div>
+ <div class="box"><h3>手をつけにくいから、育つ</h3><p>10年たつまでは、途中でやめると戻るお金が少なくなる仕組みです。<br>そのぶん、ちょっとした出費で崩さずにすみ、長く育てやすくなります。<br>急に必要になるお金は、預金に残しておく前提です。</p></div>
 </div>
+<p>いまは貯金を少しずつ増やしていく時期なので、月1万円を超えない、続けやすい金額にしています。</p>
 
 <h3 style="margin-top:22px">毎月の保険料と、払う期間</h3>
 <div class="tbl"><table>
@@ -192,21 +210,34 @@ br.m{display:none}
 </table></div>
 <p class="note">見直し後は、更新する3つの特約を65歳以降に続けるとその分が加わります。<br>払う合計は見直し後のほうが多く、そのぶん保障の範囲が広がる形です。</p>
 
-<h2 id="hikaku">このまま続けた場合と、<br class="m">組み直した場合</h2>
-<p>毎月出ていくお金はどちらも同じにそろえて、手元で使えるお金がどう育つかを比べています。<br>見直し後のほうが保険料が多い月は、このまま側でその差をNISAに積み立てた計算にしています。<br>反対に、65歳を過ぎて見直し後のほうが少なくなった月は、見直し側でNISAに積み立てます。</p>
+
+<h2 id="neuchi">お金の値打ちの話</h2>
+<p>「貯金しておけば安心」と思われがちですが、いまはお金を置いておくだけだと、少しずつ値打ちが下がる時代です。<br>面談でお話ししたコンビニのおにぎりのように、同じ1万円で買える量が減ってきています。</p>
+<div class="cards">
+ <div class="box"><h3>物の値段が上がると、預金は目減りする</h3><p>物の値段は、ここ数年 年2〜3%ずつ上がっています。<br>一方で、銀行の預金の金利は年0.2〜1%ほどです。</p><p>物の値段が毎年2%上がると、いまの100万円は、27年後（65歳）には <b>いまの約59万円分</b> の買い物しかできなくなります。</p><div class="kotoba"><b>ことば：インフレ</b>　物の値段が上がり続けること。お金の量は同じでも、買える量が減ります。</div></div>
+ <div class="box"><h3>円安になると、暮らしの値段が上がる</h3><p>1ドルは、2016年の秋に約104円でしたが、いまは約158円です。<br>日本は食べ物やガソリンを外国から買っているので、円の値打ちが下がると、スーパーの値段や電気代が上がります。</p><p>世界の株を持っていると、円安のときに円で見た値打ちが上がりやすく、<b>家計の守り</b>になります。</p><div class="kotoba"><b>ことば：円安</b>　円の値打ちが下がること。外国のものを買うのに、前より多くの円が必要になります。</div></div>
+ <div class="box"><h3>世界の株は、長く持つほど育ってきた</h3><p>世界中の会社の株をまとめて持つと、円で見て10年で約5倍になりました。<br>2008年のリーマンショックの直前に買った人は、一時は半分近く（−45%）まで下がりましたが、持ち続けた人はいま約8倍です。</p><p>大事なのは、下がった時期にもやめずに続けることです。<br>自動で引き落とされる積み立ては、その「続ける」を助けてくれます。</p></div>
+ <div class="box"><h3>だから、置き場所を分ける</h3><ul><li><b>すぐ使うお金・急な出費</b>：預金</li><li><b>10年以上先のお金</b>：育てる場所（変額保険やNISA）</li></ul><p>全部を運用にまわすのではなく、使う時期で分けるのが基本です。</p></div>
+</div>
+<p class="note">物の値段・円の値打ち・世界の株の数字は、2026年10月時点の過去の値です。<br>将来も同じように動くことを約束するものではありません。</p>
+
+<h2 id="hikaku">毎月9,510円を、<br class="m">貯金に置いた場合と比べると</h2>
+<p>同じ9,510円を毎月、銀行の預金（金利年0.3%）に置いた場合と、変額保険に入れた場合を比べました。<br>変額保険の数字は、東京海上日動あんしん生命の設計書の例示です。</p>
 <div class="f">
- <div><label for="rate">運用の利回り（年）</label><select id="rate"><option value="-0.0275">−2.75%</option><option value="0">0%</option><option value="0.0275">2.75%</option><option value="0.055" selected>5.5%</option></select><span class="u">費用を引いたあとの利回り。変額保険は設計書の例示表をそのまま使っています</span></div>
+ <div><label for="rate">変額保険の運用の利回り（年）</label><select id="rate"><option value="-0.0275">−2.75%</option><option value="0">0%</option><option value="0.0275">2.75%</option><option value="0.055" selected>5.5%</option></select><span class="u">費用を引いたあとの値。設計書の4つの例示から選べます</span></div>
+ <div><label class="chk2"><input type="checkbox" id="infl">いまのお金の値打ちに直して見る</label><span class="u">物の値段が毎年2%上がると考えて、いまの何円分にあたるかに直します</span></div>
 </div>
 <div class="tiles">
  <div class="tile"><div class="k">65歳のとき</div><div class="v" id="v65">—</div><div class="s" id="v65s"></div></div>
  <div class="tile"><div class="k">80歳のとき</div><div class="v" id="v80">—</div><div class="s" id="v80s"></div></div>
- <div class="tile"><div class="k">90歳のとき</div><div class="v" id="v90">—</div><div class="s" id="v90s"></div></div>
+ <div class="tile"><div class="k">50歳で万一のとき</div><div class="v" id="v50">—</div><div class="s" id="v50s"></div></div>
 </div>
-<p class="note">大きい数字が組み直した場合、下の小さい数字がこのまま続けた場合です。<br>どちらも「その時点で使えるお金」（解約したら戻る額＋NISAで運用しているお金）です。</p>
+<p class="note">大きい数字が変額保険、下の小さい数字が預金に置いた場合です。<br>65歳・80歳は「その時点で受け取れるお金」、万一はご家族に渡るお金です。</p>
 <div class="tbl"><table id="table"></table></div>
-<div class="chart"><svg id="svg" viewBox="0 0 900 400" role="img" aria-label="使えるお金の推移"></svg>
-<div class="legend"><span><i style="background:var(--teal)"></i>組み直した場合</span><span><i style="background:var(--grey)"></i>このまま続けた場合</span></div></div>
-<p class="note">読み方：このまま側は、見直し後との保険料の差を毎月欠かさずNISAに積み立てた場合の数字なので、使えるお金は多く出ます。<br>その差は、万一のときの600万円と、がん・心臓・脳の治療への備えを持つための費用にあたります。<br>見直し後は、口座から自動で引き落とされて積み立てが続く形です。</p>
+<div class="chart"><svg id="svg" viewBox="0 0 900 400" role="img" aria-label="受け取れるお金の推移"></svg>
+<div class="legend"><span><i style="background:var(--teal)"></i>変額保険</span><span><i style="background:var(--grey)"></i>預金に置いた場合</span></div></div>
+<p class="note">読み方：運用が0%やマイナスのときは、預金のほうが多くなります。<br>そのかわり、変額保険は最初の月から万一のとき600万円がご家族に渡ります。<br>運用がうまくいくと、80歳の受け取りは預金を大きく上回ります。</p>
+<div class="kotoba"><b>NISAという選び方も</b>　自分の証券口座で積み立てる方法です。<br>費用が低いぶん増えやすい一方で、万一の600万円はつかず、毎月自分で続ける必要があります。<br>変額保険と組み合わせる方法も、このあと一緒に考えられます。</div>
 
 <h2 id="tashikame">乗り換える前に、<br class="m">確かめておくこと</h2>
 <div class="flag"><span class="n">1</span><div><b>新しい保険が始まってから、いまの2本を解約します。</b><br>がんの治療と抗がん剤の備えは、始まってから90日を過ぎた翌日からです。<br>その間はチューリッヒのがん保険を残し、91日目以降に解約する順番にします。</div></div>
@@ -225,30 +256,23 @@ br.m{display:none}
 </ul>
 <div class="with"><img src="img/mascot_base.webp" alt=""><div>お名前・生年月日・家計の数字は、こちらの入力シートから送れます。<br>分かるところだけで大丈夫です。<br><a href="https://mm738966m-boop.github.io/kakei-hearing/">家計の数字 入力シート</a></div></div>
 
-<div class="foot">このページの試算は、証券の写真と面談でうかがった内容、東京海上日動あんしん生命の設計書（2026年10月18日作成）をもとにした目安です。<br>運用の利回りは一定と仮定しています。実際の運用は年ごとに上下し、元本を下回ることもあります。<br>変額保険の解約で戻る額は設計書の例示表を使い、表の年の間は按分しています。80歳の満期金は、受け取ったあとも同じ利回りで置いておく前提です。<br>医療保険は、更新する3つの特約を更新しない前提の設計書の保険料で計算しています。<br>保険の比較や乗り換えは、設計書と重要事項説明をお渡ししたうえで、もえさんにご判断いただくものです。<br>ご不明な点や認識の違いがありましたら、いつでもお知らせください。<br><br>作成：fulfull株式会社（東京海上日動あんしん生命 募集代理店）</div>
+<div class="foot">このページの試算は、証券の写真と面談でうかがった内容、東京海上日動あんしん生命の設計書（2026年10月18日作成）をもとにした目安です。<br>運用の利回りは一定と仮定しています。実際の運用は年ごとに上下し、元本を下回ることもあります。<br>変額保険の受け取り額は設計書の例示表を使い、表の年の間は按分しています。預金は金利年0.3%、毎月の積み立てとして計算しています。<br>医療保険は、更新する3つの特約を更新しない前提の設計書の保険料で計算しています。<br>保険の比較や乗り換えは、設計書と重要事項説明をお渡ししたうえで、もえさんにご判断いただくものです。<br>ご不明な点や認識の違いがありましたら、いつでもお知らせください。<br><br>作成：fulfull株式会社（東京海上日動あんしん生命 募集代理店）</div>
 </main>
 
 <script>
 (function(){
 const ym=(y,m)=>y*12+m-1;
-const BIRTH=ym(1988,5), START=ym(2026,11), END=ym(2083,5);   // 2026年11月1日契約・95歳まで
-const age=t=>Math.floor((t-BIRTH)/12);
-// いまのまま
+const START=ym(2026,11);
 const curP=t=>(t<=ym(2032,2)?11450:0)+118+2450;
-// 見直し後（設計書：更新特約は更新しない表示）
-const medP=t=>t<=ym(2031,10)?12795:t<=ym(2036,10)?12100:t<=ym(2053,10)?10283:0;
-const VP=9510, VYEARS=42;
-const varP=t=>(t-START)<VYEARS*12?VP:0;
-// 変額の解約返戻金（設計書・約万円）：年度→[-2.75,0,2.75,5.5]
+const VP=9510, VYEARS=42, DEP=0.003, INF=0.02;
 const VT={1:[0,0,0,0],2:[6,7,7,8],3:[15,16,17,18],4:[24,26,27,29],5:[32,35,38,41],10:[70,81,93,107],15:[97,119,148,185],20:[119,157,210,286],25:[138,194,280,419],30:[153,229,359,595],35:[166,264,448,828],40:[177,300,552,1133],42:[184,316,600,1280]};
 const KEYS=Object.keys(VT).map(Number);
 const RI={'-0.0275':0,'0':1,'0.0275':2,'0.055':3};
 function vval(n,ri){ if(n<=0)return 0; if(VT[n])return VT[n][ri];
- let lo=KEYS.filter(k=>k<n).pop(), hi=KEYS.find(k=>k>n); return VT[lo][ri]+(VT[hi][ri]-VT[lo][ri])*(n-lo)/(hi-lo); }
+ const lo=KEYS.filter(k=>k<n).pop(), hi=KEYS.find(k=>k>n); return VT[lo][ri]+(VT[hi][ri]-VT[lo][ri])*(n-lo)/(hi-lo); }
 const $=id=>document.getElementById(id);
 const man=n=>Math.round(n).toLocaleString('ja-JP')+'万円';
 
-// 保険料の階段（いまのまま）
 (function(){
  const nowP=curP(START);
  const bands=[{from:START,label:'いま（38歳）〜43歳'},{from:ym(2032,3),label:'43歳（2032年3月）〜'}];
@@ -257,28 +281,24 @@ const man=n=>Math.round(n).toLocaleString('ja-JP')+'万円';
 })();
 
 function calc(){
- const rs=$('rate').value, r=+rs, ri=RI[rs];
- const rm=Math.pow(1+r,1/12)-1;
- let nC=0,nN=0,mat=null;
- const rows=[];
- for(let t=START;t<=END;t++){
-  const d=curP(t)-(medP(t)+varP(t));
-  nC=nC*(1+rm)+(d<0?-d:0);
-  nN=nN*(1+rm)+(d>0?d:0);
-  const m=t-START+1;
+ const ri=RI[$('rate').value], infl=$('infl').checked;
+ const dm=Math.pow(1+DEP,1/12)-1;
+ let dep=0, paidR=0; const rows=[];
+ for(let m=1;m<=VYEARS*12;m++){
+  dep=dep*(1+dm)+VP;
+  paidR+=infl?VP/Math.pow(1+INF,m/12):VP;
   if(m%12===0){
-   const n=m/12, a=38+n;
-   let v;
-   if(n<=VYEARS){v=vval(n,ri);}else{ if(mat===null)mat=vval(VYEARS,ri); mat*=(1+r); v=mat; }
-   const A_new=nN/10000+v, A_cur=nC/10000;
-   const D_new=nN/10000+(n<=VYEARS?Math.max(600,v):v), D_cur=A_cur+(t>=ym(2032,3)?30:0);
-   rows.push({age:a,a:A_new,b:A_cur,dn:D_new,dc:D_cur});
+   const n=m/12, f=infl?Math.pow(1+INF,n):1, v=vval(n,ri);
+   rows.push({age:38+n,n,v:v/f,d:dep/10000/f,vd:Math.max(600,v)/f,dd:dep/10000/f,paid:paidR/10000});
   }
  }
- const at=x=>rows.find(z=>z.age===x)||rows[rows.length-1];
- [[65,'v65'],[80,'v80'],[90,'v90']].forEach(([x,id])=>{const z=at(x);$(id).textContent=man(z.a);$(id+'s').textContent='このままなら '+man(z.b)+'（差 '+(z.a>=z.b?'＋':'−')+man(Math.abs(z.a-z.b))+'）'});
- let th='<tr><th>年齢</th><th class="num">組み直し<br>使えるお金</th><th class="num">このまま<br>使えるお金</th><th class="num">組み直し<br>万一のとき家族に</th><th class="num">このまま<br>万一のとき家族に</th></tr>';
- [39,45,50,55,60,65,70,75,80,85,90].forEach(x=>{const z=at(x);th+=`<tr><td>${z.age}歳</td><td class="num"><b>${man(z.a)}</b></td><td class="num">${man(z.b)}</td><td class="num">${man(z.dn)}</td><td class="num">${man(z.dc)}</td></tr>`});
+ const at=x=>rows.find(z=>z.age===x);
+ const tile=(id,z,a,b)=>{$(id).textContent=man(a);$(id+'s').textContent='預金なら '+man(b)+'（差 '+(a>=b?'＋':'−')+man(Math.abs(a-b))+'）'};
+ tile('v65',at(65),at(65).v,at(65).d);
+ tile('v80',at(80),at(80).v,at(80).d);
+ tile('v50',at(50),at(50).vd,at(50).dd);
+ let th='<tr><th>年齢</th><th class="num">払った合計</th><th class="num">変額保険<br>受け取れるお金</th><th class="num">預金<br>受け取れるお金</th><th class="num">変額保険<br>万一のとき家族に</th><th class="num">預金<br>万一のとき家族に</th></tr>';
+ [40,45,50,55,60,65,70,75,80].forEach(x=>{const z=at(x);th+=`<tr><td>${z.age}歳</td><td class="num">${man(z.paid)}</td><td class="num"><b>${man(z.v)}</b></td><td class="num">${man(z.d)}</td><td class="num">${man(z.vd)}</td><td class="num">${man(z.dd)}</td></tr>`});
  $('table').innerHTML=th;
  draw(rows);
 }
@@ -287,21 +307,23 @@ function draw(rows){
  const svg=$('svg'); const nar=svg.parentNode.clientWidth<640;
  const W=nar?600:900,H=nar?500:400,L=nar?128:84,R=20,T=20,B=nar?70:46,fs=nar?25:16;
  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
- const a0=rows[0].age,a1=rows[rows.length-1].age;
- const all=rows.flatMap(z=>[z.a,z.b]); let max=Math.max(...all,100);
- const step=max>12000?4000:max>6000?2000:max>3000?1000:max>1200?500:200; max=Math.ceil(max/step)*step;
+ const a0=38,a1=rows[rows.length-1].age;
+ let max=Math.max(...rows.flatMap(z=>[z.v,z.d]),100);
+ const step=max>3000?1000:max>1200?500:max>600?200:100; max=Math.ceil(max/step)*step;
  const x=a=>L+(a-a0)/(a1-a0)*(W-L-R), y=v=>T+(max-v)/max*(H-T-B);
  const ink2=cs('--ink2'),line=cs('--line'),teal=cs('--teal'),grey=cs('--grey');
  let s='';
  for(let v=0;v<=max;v+=step)s+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="${v?line:ink2}"/><text x="${L-8}" y="${y(v)+5}" text-anchor="end" font-size="${fs}" fill="${ink2}">${v.toLocaleString('ja-JP')}万</text>`;
- for(const a of rows.map(z=>z.age).filter(a=>a%(nar?10:5)===0))s+=`<text x="${x(a)}" y="${H-(nar?34:18)}" text-anchor="middle" font-size="${fs}" fill="${ink2}">${a}歳</text>`;
- const path=k=>rows.map((z,i)=>(i?'L':'M')+x(z.age).toFixed(1)+' '+y(z[k]).toFixed(1)).join(' ');
- s+=`<path d="${path('a')} L${x(a1)} ${y(0)} L${x(a0)} ${y(0)}Z" fill="${teal}" fill-opacity=".10"/>`;
- s+=`<path d="${path('b')}" fill="none" stroke="${grey}" stroke-width="4" stroke-dasharray="9 6"/>`;
- s+=`<path d="${path('a')}" fill="none" stroke="${teal}" stroke-width="4.5"/>`;
+ for(const a of [40,50,60,70,80].concat(nar?[]:[45,55,65,75]))s+=`<text x="${x(a)}" y="${H-(nar?34:18)}" text-anchor="middle" font-size="${fs}" fill="${ink2}">${a}歳</text>`;
+ const pts=k=>[{age:38,[k]:0},...rows];
+ const path=k=>pts(k).map((z,i)=>(i?'L':'M')+x(z.age).toFixed(1)+' '+y(z[k]).toFixed(1)).join(' ');
+ s+=`<path d="${path('v')} L${x(a1)} ${y(0)} L${x(a0)} ${y(0)}Z" fill="${teal}" fill-opacity=".10"/>`;
+ s+=`<path d="${path('d')}" fill="none" stroke="${grey}" stroke-width="4" stroke-dasharray="9 6"/>`;
+ s+=`<path d="${path('v')}" fill="none" stroke="${teal}" stroke-width="4.5"/>`;
  svg.innerHTML=s;
 }
 $('rate').addEventListener('input',calc);
+$('infl').addEventListener('change',calc);
 window.addEventListener('resize',()=>calc());
 calc();
 })();
