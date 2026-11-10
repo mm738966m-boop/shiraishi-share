@@ -97,6 +97,7 @@ li{margin-bottom:6px}
 .chk2{display:flex;gap:10px;align-items:center;font-size:17px;font-weight:700;color:var(--deep);margin-top:6px}
 .chk2 input{width:24px;height:24px}
 @media (max-width:760px){.cards{grid-template-columns:1fr}}
+#table td:first-child{white-space:nowrap}
 br.m{display:none}
 @media (max-width:760px){
  .hero .in{grid-template-columns:1fr}.hero img{width:120px}
@@ -112,7 +113,7 @@ br.m{display:none}
 
 <header class="hero"><div class="wrap in">
  <div>
-  <span class="tag">もえさま 本人用・2026年10月18日・Version 5</span>
+  <span class="tag">もえさま 本人用・2026年11月10日・Version 6</span>
   <h1>がんの備えを広げながら、<br>家族を守るお金を<br class="m"><span style="white-space:nowrap">育てていく形に</span></h1>
   <p style="margin-top:12px">もえさんが送ってくださった2本の証券を、1枚の地図にしました。<br>そのうえで、東京海上日動あんしん生命の設計書（2026年10月18日作成）をもとに、組み直した形を並べています。<br>数字は動かせるので、一緒に触りながら見ていきましょう。</p>
  </div>
@@ -232,10 +233,11 @@ br.m{display:none}
 </div>
 <p class="note">物の値段・円の値打ち・世界の株の数字は、2026年10月時点の過去の値です。<br>将来も同じように動くことを約束するものではありません。</p>
 
-<h2 id="hikaku">毎月9,510円を、<br class="m">貯金に置いた場合と比べると</h2>
-<p>同じ9,510円を毎月、銀行の預金（金利年0.3%）に置いた場合と、変額保険に入れた場合を比べました。<br>変額保険の数字は、東京海上日動あんしん生命の設計書の例示です。</p>
+<h2 id="hikaku">毎月のお金を、<br class="m">貯金に置いた場合と比べると</h2>
+<p>同じ金額を毎月、銀行の預金（金利年0.3%）に置いた場合と、変額保険に入れた場合を比べました。<br>毎月の金額と運用の利回りは、下で切り替えられます。</p>
 <div class="f">
- <div><label for="rate">変額保険の運用の利回り（年）</label><select id="rate"><option value="-0.0275">−2.75%</option><option value="0">0%</option><option value="0.0275">2.75%</option><option value="0.055" selected>5.5%</option></select><span class="u">費用を引いたあとの値。設計書の4つの例示から選べます</span></div>
+ <div><label for="amt">変額保険の毎月の金額</label><select id="amt"><option value="9510" selected>月9,510円（設計書の金額）</option><option value="20000">月2万円</option><option value="30000">月3万円</option></select><span class="u">万一のときの金額：約<span id="baseTxt">600</span>万円（80歳まで）</span></div>
+ <div><label for="rate">変額保険の運用の利回り（年）</label><select id="rate"><option value="-0.0275">−2.75%</option><option value="0">0%</option><option value="0.0275">2.75%</option><option value="0.055" selected>5.5%</option><option value="0.16">16%（実績に近い）</option></select><span class="u">費用を引いたあとの値。−2.75%〜5.5%は設計書の例示です</span></div>
  <div><label class="chk2"><input type="checkbox" id="infl">いまのお金の値打ちに直して見る</label><span class="u">物の値段が毎年2%上がると考えて、いまの何円分にあたるかに直します</span></div>
 </div>
 <div class="tiles">
@@ -243,12 +245,13 @@ br.m{display:none}
  <div class="tile"><div class="k">80歳のとき</div><div class="v" id="v80">—</div><div class="s" id="v80s"></div></div>
  <div class="tile"><div class="k">50歳で万一のとき</div><div class="v" id="v50">—</div><div class="s" id="v50s"></div></div>
 </div>
-<p class="note">大きい数字が変額保険、下の小さい数字が預金に置いた場合です。<br>65歳・80歳は「その時点で受け取れるお金」、万一はご家族に渡るお金です。</p>
+<div class="caution" id="note16" style="display:none">16%は、外国株式型の始まってから約9年の実績（年17.12%）に近い数字です。<br>その成績がこの先もずっと続いたら、という仮の計算で、設計書の例示ではありません。<br>実際は下がる年もあり、長い期間で見ると、ここまで育たないことのほうが多いと考えておいてください。</div>
+<p class="note">大きい数字が変額保険、下の小さい数字が預金に置いた場合です。<br>65歳・80歳は「その時点で受け取れるお金」、万一はご家族に渡るお金です。<br><span id="estNote"></span></p>
 <div class="tbl"><table id="table"></table></div>
 <div class="chart"><svg id="svg" viewBox="0 0 900 400" role="img" aria-label="受け取れるお金の推移"></svg>
 <div class="legend"><span><i style="background:var(--teal)"></i>変額保険</span><span><i style="background:var(--grey)"></i>預金に置いた場合</span></div></div>
-<p class="note">読み方：運用が0%やマイナスのときは、預金のほうが多くなります。<br>そのかわり、変額保険は最初の月から万一のとき600万円がご家族に渡ります。<br>運用がうまくいくと、80歳の受け取りは預金を大きく上回ります。</p>
-<div class="kotoba"><b>NISAという選び方も</b>　自分の証券口座で積み立てる方法です。<br>費用が低いぶん増えやすい一方で、万一の600万円はつかず、毎月自分で続ける必要があります。<br>変額保険と組み合わせる方法も、このあと一緒に考えられます。</div>
+<p class="note">読み方：運用が0%やマイナスのときは、預金のほうが多くなります。<br>そのかわり、変額保険は最初の月から、万一のとき約<span id="baseTxt2">600</span>万円がご家族に渡ります。<br>運用がうまくいくと、80歳の受け取りは預金を大きく上回ります。</p>
+<div class="kotoba"><b>NISAという選び方も</b>　自分の証券口座で積み立てる方法です。<br>費用が低いぶん増えやすい一方で、万一のときの保障はつかず、毎月自分で続ける必要があります。<br>変額保険と組み合わせる方法も、このあと一緒に考えられます。</div>
 
 <h2 id="tashikame">乗り換える前に、<br class="m">確かめておくこと</h2>
 <div class="flag"><span class="n">1</span><div><b>新しい保険が始まってから、いまの2本を解約します。</b><br>がんの治療と抗がん剤の備えは、始まってから90日を過ぎた翌日からです。<br>その間はチューリッヒのがん保険を残し、91日目以降に解約する順番にします。</div></div>
@@ -267,7 +270,7 @@ br.m{display:none}
 </ul>
 <div class="with"><img src="img/mascot_base.webp" alt=""><div>お名前・生年月日・家計の数字は、こちらの入力シートから送れます。<br>分かるところだけで大丈夫です。<br><a href="https://mm738966m-boop.github.io/kakei-hearing/">家計の数字 入力シート</a></div></div>
 
-<div class="foot">このページの試算は、証券の写真と面談でうかがった内容、東京海上日動あんしん生命の設計書（2026年10月18日作成）をもとにした目安です。<br>運用の利回りは一定と仮定しています。実際の運用は年ごとに上下し、元本を下回ることもあります。<br>外国株式型の実績は、東京海上日動あんしん生命「特別勘定レポート」（2026年8月末現在）によります。<br>変額保険の受け取り額は設計書の例示表を使い、表の年の間は按分しています。預金は金利年0.3%、毎月の積み立てとして計算しています。<br>医療保険は、更新する3つの特約を更新しない前提の設計書の保険料で計算しています。<br>保険の比較や乗り換えは、設計書と重要事項説明をお渡ししたうえで、もえさんにご判断いただくものです。<br>ご不明な点や認識の違いがありましたら、いつでもお知らせください。<br><br>作成：fulfull株式会社（東京海上日動あんしん生命 募集代理店）</div>
+<div class="foot">このページの試算は、証券の写真と面談でうかがった内容、東京海上日動あんしん生命の設計書（2026年10月18日作成）をもとにした目安です。<br>運用の利回りは一定と仮定しています。実際の運用は年ごとに上下し、元本を下回ることもあります。<br>外国株式型の実績は、東京海上日動あんしん生命「特別勘定レポート」（2026年8月末現在）によります。<br>変額保険の受け取り額は、月9,510円は設計書の例示表を使い、表の年の間は按分しています。月2万円・3万円は設計書の表を金額の割合で伸ばした目安、16%は設計書の5.5%の表から求めた「運用に回る割合」で計算した目安です。預金は金利年0.3%、毎月の積み立てとして計算しています。<br>医療保険は、更新する3つの特約を更新しない前提の設計書の保険料で計算しています。<br>保険の比較や乗り換えは、設計書と重要事項説明をお渡ししたうえで、もえさんにご判断いただくものです。<br>ご不明な点や認識の違いがありましたら、いつでもお知らせください。<br><br>作成：fulfull株式会社（東京海上日動あんしん生命 募集代理店）</div>
 </main>
 
 <script>
@@ -279,10 +282,16 @@ const VP=9510, VYEARS=42, DEP=0.003, INF=0.02;
 const VT={1:[0,0,0,0],2:[6,7,7,8],3:[15,16,17,18],4:[24,26,27,29],5:[32,35,38,41],10:[70,81,93,107],15:[97,119,148,185],20:[119,157,210,286],25:[138,194,280,419],30:[153,229,359,595],35:[166,264,448,828],40:[177,300,552,1133],42:[184,316,600,1280]};
 const KEYS=Object.keys(VT).map(Number);
 const RI={'-0.0275':0,'0':1,'0.0275':2,'0.055':3};
+// 設計書5.5%の表から求めた「積み立て計算に対する解約返戻金の割合」（年度ごと）
+const K55={1:0,2:0.3328,3:0.4858,4:0.571,5:0.628,10:0.7105,15:0.7058,20:0.7012,25:0.7003,30:0.7023,35:0.7061,40:0.7091,42:0.7101};
+const KK=Object.keys(K55).map(Number);
+function k55(n){ if(K55[n]!==undefined)return K55[n]; const lo=KK.filter(k=>k<n).pop(), hi=KK.find(k=>k>n); return K55[lo]+(K55[hi]-K55[lo])*(n-lo)/(hi-lo); }
+function fvM(n,r,P){ const rm=Math.pow(1+r,1/12)-1; let a=0; for(let m=0;m<n*12;m++)a=a*(1+rm)+P; return a/10000; }
+function vAt(n,rs,P){ if(RI[rs]!==undefined)return vval(n,RI[rs])*P/VP; return k55(n)*fvM(n,+rs,P); }
 function vval(n,ri){ if(n<=0)return 0; if(VT[n])return VT[n][ri];
  const lo=KEYS.filter(k=>k<n).pop(), hi=KEYS.find(k=>k>n); return VT[lo][ri]+(VT[hi][ri]-VT[lo][ri])*(n-lo)/(hi-lo); }
 const $=id=>document.getElementById(id);
-const man=n=>Math.round(n).toLocaleString('ja-JP')+'万円';
+const man=n=>{n=Math.round(n); if(n>=10000){const o=Math.floor(n/10000), r=n%10000; return o+'億'+(r?r.toLocaleString('ja-JP')+'万':'')+'円';} return n.toLocaleString('ja-JP')+'万円';};
 
 (function(){
  const nowP=curP(START);
@@ -292,15 +301,19 @@ const man=n=>Math.round(n).toLocaleString('ja-JP')+'万円';
 })();
 
 function calc(){
- const ri=RI[$('rate').value], infl=$('infl').checked;
+ const rs=$('rate').value, infl=$('infl').checked, P=+$('amt').value;
+ const base=Math.round(600*P/VP);
+ $('baseTxt').textContent=base.toLocaleString('ja-JP'); $('baseTxt2').textContent=base.toLocaleString('ja-JP');
+ $('note16').style.display=rs==='0.16'?'block':'none';
+ $('estNote').textContent=(P===VP&&rs!=='0.16')?'変額保険の数字は、東京海上日動あんしん生命の設計書の例示です。':'この組み合わせは設計書にないため、設計書の表をもとにした目安です。金額は設計書で確かめます。';
  const dm=Math.pow(1+DEP,1/12)-1;
  let dep=0, paidR=0; const rows=[];
  for(let m=1;m<=VYEARS*12;m++){
-  dep=dep*(1+dm)+VP;
-  paidR+=infl?VP/Math.pow(1+INF,m/12):VP;
+  dep=dep*(1+dm)+P;
+  paidR+=infl?P/Math.pow(1+INF,m/12):P;
   if(m%12===0){
-   const n=m/12, f=infl?Math.pow(1+INF,n):1, v=vval(n,ri);
-   rows.push({age:38+n,n,v:v/f,d:dep/10000/f,vd:Math.max(600,v)/f,dd:dep/10000/f,paid:paidR/10000});
+   const n=m/12, f=infl?Math.pow(1+INF,n):1, v=vAt(n,rs,P);
+   rows.push({age:38+n,n,v:v/f,d:dep/10000/f,vd:Math.max(base,v)/f,dd:dep/10000/f,paid:paidR/10000});
   }
  }
  const at=x=>rows.find(z=>z.age===x);
@@ -316,15 +329,15 @@ function calc(){
 function cs(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
 function draw(rows){
  const svg=$('svg'); const nar=svg.parentNode.clientWidth<640;
- const W=nar?600:900,H=nar?500:400,L=nar?128:84,R=20,T=20,B=nar?70:46,fs=nar?25:16;
+ const W=nar?600:900,H=nar?500:400,L=nar?128:84,R=nar?44:30,T=20,B=nar?70:46,fs=nar?25:16;
  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
  const a0=38,a1=rows[rows.length-1].age;
  let max=Math.max(...rows.flatMap(z=>[z.v,z.d]),100);
- const step=max>3000?1000:max>1200?500:max>600?200:100; max=Math.ceil(max/step)*step;
+ const step=max>60000?20000:max>30000?10000:max>12000?4000:max>6000?2000:max>3000?1000:max>1200?500:max>600?200:100; max=Math.ceil(max/step)*step;
  const x=a=>L+(a-a0)/(a1-a0)*(W-L-R), y=v=>T+(max-v)/max*(H-T-B);
  const ink2=cs('--ink2'),line=cs('--line'),teal=cs('--teal'),grey=cs('--grey');
  let s='';
- for(let v=0;v<=max;v+=step)s+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="${v?line:ink2}"/><text x="${L-8}" y="${y(v)+5}" text-anchor="end" font-size="${fs}" fill="${ink2}">${v.toLocaleString('ja-JP')}万</text>`;
+ for(let v=0;v<=max;v+=step)s+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="${v?line:ink2}"/><text x="${L-8}" y="${y(v)+5}" text-anchor="end" font-size="${fs}" fill="${ink2}">${v>=10000?(v/10000)+'億':v.toLocaleString('ja-JP')+'万'}</text>`;
  for(const a of [40,50,60,70,80].concat(nar?[]:[45,55,65,75]))s+=`<text x="${x(a)}" y="${H-(nar?34:18)}" text-anchor="middle" font-size="${fs}" fill="${ink2}">${a}歳</text>`;
  const pts=k=>[{age:38,[k]:0},...rows];
  const path=k=>pts(k).map((z,i)=>(i?'L':'M')+x(z.age).toFixed(1)+' '+y(z[k]).toFixed(1)).join(' ');
@@ -335,6 +348,7 @@ function draw(rows){
 }
 $('rate').addEventListener('input',calc);
 $('infl').addEventListener('change',calc);
+$('amt').addEventListener('input',calc);
 window.addEventListener('resize',()=>calc());
 calc();
 })();
