@@ -304,7 +304,7 @@ function calc(){
  const rs=$('rate').value, infl=$('infl').checked, P=+$('amt').value;
  const base=Math.round(600*P/VP);
  $('baseTxt').textContent=base.toLocaleString('ja-JP'); $('baseTxt2').textContent=base.toLocaleString('ja-JP');
- $('note16').style.display=rs==='0.16'?'block':'none';
+ const n16=$('note16'); if(n16)n16.style.display=rs==='0.16'?'block':'none';
  $('estNote').textContent=(P===VP&&rs!=='0.16')?'変額保険の数字は、東京海上日動あんしん生命の設計書の例示です。':'この組み合わせは設計書にないため、設計書の表をもとにした目安です。金額は設計書で確かめます。';
  const dm=Math.pow(1+DEP,1/12)-1;
  let dep=0, paidR=0; const rows=[];
